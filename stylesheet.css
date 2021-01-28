@@ -1,0 +1,133 @@
+* {
+  box-sizing: border-box;
+}
+
+h1 {
+  text-align:center;
+  font-weight: bold;
+  font-size: 50px;
+}
+
+p {
+  font-size: 25px;
+  color: #8a8a8a;
+}
+
+input {
+  border:5px solid #bbc3c6;
+  padding: 12px 12px; 
+  font-size: 24px;
+  text-align:center;
+}
+
+img {
+  max-width: 150px;
+  width: 100%;
+  margin-right: 10px;
+}
+
+.container {
+  position: relative;
+}
+
+.heading {
+  padding: 10px;
+  position: relative;
+  font-size:20px;
+}
+
+.table {
+  background: #ffffff;
+}
+
+
+.layout-inline > * {
+  display: inline-block;
+}
+
+.align-center {
+  text-align: center;
+}
+
+.th {
+  border-top:1px solid;
+  border-bottom:1px solid;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.tf {
+  border-top:1px solid;
+  font-size: 16px;  
+  font-weight: bold;
+  text-align:center;
+}
+
+.col {
+  padding:10px;
+  width: 12%;
+}
+
+.col-pro {
+  width: 44%;
+}
+
+.col-pro > * {
+  vertical-align: middle;
+}
+
+.col-qty {
+  text-align: center;
+  width: 17%;
+}
+
+.tf .col {
+    width:100%;
+}
+
+.right{
+    width:50%;
+    position:absolute;
+    margin-left:400px;
+    margin-bottom:100px;
+}
+.row div {
+  vertical-align: middle;
+}
+
+.row-bg2 {
+  background: #f7f7f7;
+}
+
+.col-qty input {
+  width: 60px;
+}
+
+.btn {
+  padding: 10px 30px;
+  border-radius: 6px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.settlement{
+  width:50%;
+  height:70px;
+  float: left;
+  margin: 60px 60px;
+}
+
+.decision{
+  width:200px;
+  height:70px;
+  margin: 60px 60px;
+  display:block;
+}
+
+.buy{
+  width:200px;
+  height:70px;
+  margin: 60px 60px;
+  display:block;
+}
+

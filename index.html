@@ -1,0 +1,243 @@
+<html>
+
+<head>
+	<link rel="stylesheet" href="stylesheet.css">
+	<script>
+		function calc(){
+            var a = document.getElementById('input-number1').value;
+            a = Number(a);
+            var b = document.getElementById('input-number2').value;
+            b = Number(b);
+            var c = document.getElementById('input-number3').value;
+            c = Number(c);
+            if(a<0||b<0||c<0||Number.isInteger(a)==false||Number.isInteger(b)==false||Number.isInteger(c)==false){
+                alert("入力エラーがあります");
+            }else{
+                if(a==""){
+                    a = 0;
+                    document.getElementById('input-number1').value = a;
+                };
+                if(b==""){
+                    b = 0;
+                    document.getElementById('input-number2').value = b;
+                };
+                if(c==""){
+                    c = 0;
+                    document.getElementById('input-number3').value = c;
+                };
+                a = document.getElementById('input-number1').value;
+                b = document.getElementById('input-number2').value;
+                c = document.getElementById('input-number3').value;
+                if(a==0&&b==0&&c==0){
+                    alert("入力エラーがあります");
+                }else{
+                    var d = total(a,b,c);
+                    var e = postage(a,b,c);
+                    var f = tax(a,b,c);
+                    document.getElementById('output-number1').value = d;
+                    document.getElementById('output-number2').value = e;
+                    document.getElementById('output-number3').value = f;
+                };
+            };
+        };
+
+        function total(a,b,c){
+            var total = a*3900 + b*3900 + c*4900;
+            return total;
+        };
+
+        function postage(a,b,c){
+            var total = a*3900 + b*3900 + c*4900;
+            var postage = total + 500;
+            return postage;
+        };
+
+        function tax(a,b,c){
+            var total = a*3900 + b*3900 + c*4900;
+            var postage = total + 500;
+            var tax = postage*1.1;
+            tax = Math.round(tax);
+            return tax;
+        };
+
+        function decision(){
+            var num1 = document.getElementById('output-number1').value;
+            var num2 = document.getElementById('output-number2').value;
+            var num3 = document.getElementById('output-number3').value;
+            if(num1==""||num2==""||num3==""){
+                alert("入力エラーがあります");
+            }else{
+                alert("ご購入ありがとうございます！");
+            };
+        };
+
+        function plus1(){
+            var a = document.getElementById('input-number1').value;
+            a = Number(a);
+            a = a+1;
+            document.getElementById('input-number1').value = a;
+        };
+
+        function plus2(){
+            var b = document.getElementById('input-number2').value;
+            b = Number(b);
+            b = b+1;
+            document.getElementById('input-number2').value = b;
+        };
+
+        function plus3(){
+            var c = document.getElementById('input-number3').value;
+            c = Number(c);
+            c = c+1;
+            document.getElementById('input-number3').value = c;
+        };
+
+        function minus1(){
+            var a = document.getElementById('input-number1').value;
+            a = Number(a);
+            if(a == 0){
+                a = 0;
+            }else if(a >= 1){
+                a = a-1;
+            };
+            document.getElementById('input-number1').value = a;
+        };
+
+        function minus2(){
+            var b = document.getElementById('input-number2').value;
+            b = Number(b);
+            if(b == 0){
+                b = 0;
+            }else if(b >= 1){
+                b = b-1;
+            };
+            document.getElementById('input-number2').value = b;
+        };
+
+        function minus3(){
+            var c = document.getElementById('input-number3').value;
+            c = Number(c);
+            if(c == 0){
+                c = 0;
+            }else if(c >= 1){
+                c = c-1;
+            };
+            document.getElementById('input-number3').value = c;
+        };
+	</script>
+</head>
+
+<body>
+	<div class="container">
+		<div class="heading">
+			<h1>Sneakers　Shopping</h1>
+		</div>
+		<div class="cart">
+			<div class="table">
+				<div class="layout-inline row th">
+					<div class="col col-pro align-center">商品</div>
+					<div class="col col-price align-center ">
+						値段
+					</div>
+					<div class="col col-qty align-center">数量</div>
+				</div>
+
+				<div class="layout-inline row">
+
+					<div class="col col-pro layout-inline">
+						<img src="img/red_sneakers.png" alt="sneakers" />
+						<p>Red Sneakers</p>
+					</div>
+
+					<div class="col col-price align-center ">
+						<p>3900円</p>
+					</div>
+
+					<div class="col col-qty layout-inline">
+						<button onclick="minus1()" href="#" class="minus">-</button>
+						<input id="input-number1" type="text">
+						<button onclick="plus1()" href="#" class="plus">+</button>
+					</div>
+					<div class="col">
+						<p></p>
+					</div>
+					<div class="col">
+						<p></p>
+					</div>
+				</div>
+
+				<div class="layout-inline row row-bg2">
+					<div class="col col-pro layout-inline">
+						<img src="img/blue_sneakers.png" alt="sneakers" />
+						<p>Blue Sneakers</p>
+					</div>
+					<div class="col col-price align-center ">
+						<p>3900円</p>
+					</div>
+					<div class="col col-qty  layout-inline">
+						<button onclick="minus2()" href="#" class="minus">-</button>
+						<input id="input-number2" type="text">
+						<button onclick="plus2()" href="#" class="plus">+</button>
+					</div>
+					<div class="col">
+						<p></p>
+					</div>
+					<div class="col">
+						<p></p>
+					</div>
+				</div>
+				<div class="layout-inline row">
+					<div class="col col-pro layout-inline">
+						<img src="img/block_sneakers.png" alt="sneakers" />
+						<p>Black Sneakers</p>
+					</div>
+					<div class="col col-price align-center ">
+						<p>4900円</p>
+					</div>
+					<div class="col col-qty layout-inline">
+						<button onclick="minus3()" href="#" class="minus">-</button>
+						<input id="input-number3" type="text">
+						<button onclick="plus3()" href="#" class="plus">+</button>
+					</div>
+					<div class="col">
+						<p></p>
+					</div>
+					<div class="col">
+						<p></p>
+					</div>
+				</div>
+			</div>
+			<div class="tf">
+				<div class="settlement">
+					<button href="#" onclick="calc()" class="btn decision">決定</button>
+					<button href="#" onclick="decision()" class="btn buy">購入</button>
+				</div>
+				<div class="right">
+					<div class="row layout-inline">
+						<div class="col">
+							<p>合計</p>
+							<p><input id="output-number1" type="text" class="output"></p>
+						</div>
+						<div class="col"></div>
+					</div>
+					<div class="row layout-inline">
+						<div class="col">
+							<p>送料込み（送料５００円）</p>
+							<p><input id="output-number2" type="text" class="output"></p>
+						</div>
+						<div class="col"></div>
+					</div>
+					<div class="row layout-inline">
+						<div class="col">
+							<p>税込み（税率10%）</p>
+							<p><input id="output-number3" type="text" class="output"></p>
+						</div>
+						<div class="col"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>
